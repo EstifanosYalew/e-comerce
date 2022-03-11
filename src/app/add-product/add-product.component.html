@@ -1,0 +1,48 @@
+<form (ngSubmit)="addProduct(f['value'])" #f="ngForm">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Image Url</label>
+    <input
+      [ngModel]
+      name="imageUrl"
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input
+      [ngModel]
+      name="name"
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Description</label>
+    <input
+      [ngModel]
+      name="description"
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Price</label>
+    <input
+      [ngModel]
+      size="10px"
+      name="price"
+      type="number"
+      class="form-control"
+      id="exampleInputPassword1"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

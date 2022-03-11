@@ -1,0 +1,31 @@
+<div class="button">
+  <button type="button" class="btn btn-primary" [routerLink]="['products/add']">
+    Add Product
+  </button>
+</div>
+
+<div class="row">
+  <div
+    class="card"
+    *ngFor="let product of product"
+    style="width: 18rem; height: -10"
+  >
+    <img [src]="product.avatar" class="card-img-top" alt="..." />
+    <div class="card-body"></div>
+    <h5 class="card-title">{{ product.name | uppercase }}</h5>
+
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+    <h5 *ngIf="product.price < 30">$ {{ product.price }} (*On Discount)</h5>
+    <h5 *ngIf="product.price > 30">$ {{ product.price }}</h5>
+
+    <button (click)="editProduct(product.id)" class="btn btn-primary">
+      Edit Product
+    </button>
+    <br />
+    <button (click)="removeProduct(product.id)" class="btn btn-primary">
+      Remove
+    </button>
+  </div>
+</div>

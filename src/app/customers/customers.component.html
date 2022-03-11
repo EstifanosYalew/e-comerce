@@ -1,0 +1,35 @@
+<div class="button">
+  <button
+    (click)="addingCustomer()"
+    type="button"
+    class="btn btn-primary"
+    [routerLink]="['customers/add']"
+  >
+    Add Customer
+  </button>
+</div>
+
+<div class="row">
+  <div class="card" style="width: 18rem" *ngFor="let customerList of customer">
+    <img [src]="customerList.photo" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ customerList.name }}</h5>
+      <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Gender : {{ customerList.gender }}</li>
+      <li class="list-group-item">Age : {{ customerList.age }}</li>
+      <li class="list-group-item">
+        Phone Number : {{ customerList.phoneNumber }}
+      </li>
+      <li class="list-group-item">Address : {{ customerList.address }}</li>
+      <button (click)="editCustomer(customerList.id)" class="btn btn-primary">
+        Edit Customer
+      </button>
+      <br />
+      <button (click)="removeCustomer(customerList.id)" class="btn btn-primary">
+        Remove
+      </button>
+    </ul>
+  </div>
+</div>
